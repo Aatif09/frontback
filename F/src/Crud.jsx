@@ -10,19 +10,19 @@ function Crud() {
 
   // Fetch all users
   const fetchUsers = async () => {
-    const res = await axios.get('http://localhost:3000/api/usersjson');
+    const res = await axios.get('https://frontback-tufv.onrender.com/api/usersjson');
     setUsers(res.data);
   };
 
   // Fetch user by ID
   const fetchUserById = async () => {
-    const res = await axios.get(`http://localhost:3000/api/usersjson/${userId}`);
+    const res = await axios.get(`https://frontback-tufv.onrender.com/api/usersjson/${userId}`);
     alert(JSON.stringify(res.data));
   };
 
   // Add a new user
   const addUser = async () => {
-    await axios.post('http://localhost:3000/api/usersjson', {
+    await axios.post('https://frontback-tufv.onrender.com/api/usersjson', {
       name: userName,
       age: userAge
     });
@@ -34,7 +34,7 @@ function Crud() {
 
   // Update a user by ID
   const updateUser = async () => {
-    await axios.patch(`http://localhost:3000/api/usersjson/${userId}`, { name: updateName });
+    await axios.patch(`https://frontback-tufv.onrender.com/api/usersjson/${userId}`, { name: updateName });
     alert('User updated successfully');
     setUpdateName('');
     fetchUsers();
@@ -42,7 +42,7 @@ function Crud() {
 
   // Delete a user by ID
   const deleteUser = async () => {
-    await axios.delete(`http://localhost:3000/api/usersjson/${userId}`);
+    await axios.delete(`https://frontback-tufv.onrender.com/api/usersjson/${userId}`);
     alert('User deleted successfully');
     fetchUsers();
   };
